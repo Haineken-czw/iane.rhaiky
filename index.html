@@ -1,51 +1,132 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Iane 💌</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
-  <link rel="stylesheet" href="iane.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Feliz Dia Dos Namorados</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: red;
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .painel {
+      background-color: white;
+      width: 90%;
+      max-width: 500px;
+      border-radius: 20px;
+      text-align: center;
+      padding: 30px 20px;
+      position: relative;
+    }
+
+    .painel h1 {
+      margin-bottom: 10px;
+    }
+
+    .painel img {
+      width: 100%;
+      max-width: 250px;
+      margin: 20px 0;
+    }
+
+    .frase-topo {
+      font-size: 18px;
+      margin-bottom: 20px;
+      color: #e60000;
+    }
+
+    .pergunta-bj {
+      font-size: 20px;
+      margin: 20px 0;
+    }
+
+    #sim, #nao {
+      height: 40px;
+      width: 70px;
+      background-color: red;
+      border: 2px solid white;
+      border-radius: 10px;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    #sim {
+      margin-right: 10px;
+    }
+
+    #nao {
+      position: absolute;
+    }
+
+    @media (max-width: 500px) {
+      .painel {
+        padding: 20px 10px;
+      }
+
+      .painel img {
+        max-width: 200px;
+      }
+
+      .frase-topo {
+        font-size: 16px;
+      }
+
+      .pergunta-bj {
+        font-size: 18px;
+      }
+
+      #sim, #nao {
+        width: 60px;
+        height: 35px;
+        font-size: 14px;
+      }
+    }
+  </style>
 </head>
 <body>
 
-<div class="bgoverlay">
-  <div class="container">
-    <span class="ico">
-      <span class="ico2"></span>
-      <span class="title">Clique aqui 💖</span>
-    </span>
-    <div class="endtext">
-      <span class="close" title="Recomeçar"><i class="fa fa-times"></i></span>  
-      <h1>Bom dia, Iane 💖</h1>
-      <h2>Você é incrível e muito linda</h2>
-      <h3>— Com carinho, Rhaiky seu amor</h3>
-    </div>
+  <div class="painel">
+    <h1>Bom dia Iane, sabia que você é uma menina muito bonita ok</h1>
+    <p class="frase-topo">esse botão foi chato de arrumar</p>
+    <img src="https://gifman.net/wp-content/uploads/2019/06/ursinho-fofo-apaixonado.gif" alt="Ursinho apaixonado" />
+    
+    <h2>Quer me dar uns bj não?</h2>
+
+    <a href="https://www.youtube.com/watch?v=oRvND-r57Us">
+      <button id="sim">Sim!</button>
+    </a>
+    <button id="nao" onmouseover="fuja()">Não!</button>
   </div>
-</div>
 
-<audio id="musica" src="https://cdn.glitch.global/9e9705db-9e12-4563-8700-7e08ff3d18e0/thousand-years.mp3?v=1711327321384" preload="auto"></audio>
+  <script>
+    function fuja() {
+      const botaoNao = document.getElementById("nao");
+      const larguraJanela = window.innerWidth;
+      const alturaJanela = window.innerHeight;
 
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script>
-  $(document).ready(function(){
-    $('.title').click(function(){
-      $('.container').addClass('open');
-      const audio = document.getElementById('musica');
-      if (audio.paused) {
-        audio.volume = 0.6;
-        audio.play();
-      }
-    });
+      const maxX = larguraJanela - botaoNao.offsetWidth;
+      const maxY = alturaJanela - botaoNao.offsetHeight;
 
-    $('.close').click(function(){
-      $('.container').removeClass('open');
-      const audio = document.getElementById('musica');
-      audio.pause();
-      audio.currentTime = 0;
-    });
-  });
-</script>
+      const aleatorioX = Math.floor(Math.random() * maxX);
+      const aleatorioY = Math.floor(Math.random() * maxY);
+
+      botaoNao.style.left = aleatorioX + "px";
+      botaoNao.style.top = aleatorioY + "px";
+    }
+  </script>
 
 </body>
 </html>
