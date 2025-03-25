@@ -50,24 +50,26 @@ body {
 }
 
 .message {
-    position: relative;
+    position: absolute;
     top: 2vmin;
+    left: 0;
+    right: 0;
     font-size: 3.5vmin;
     text-align: center;
     padding: 0 2vmin;
-    z-index: 2;
-}
+    z-index: 3;
+  }  
 
-.pikachu {
-    position: relative;
-  background: #f9ebaa;
-  height: 8vmin;
-  width: 10vmin;
-  border-radius: 40%;
-  top: 4vmin;
-  display: flex;
-  z-index: 1;
-}
+  .pikachu {
+    position: absolute;
+    background: #f9ebaa;
+    height: 8vmin;
+    width: 10vmin;
+    border-radius: 40%;
+    top: 10vmin;
+    display: flex;
+    z-index: 2;
+  }
 .pikachu::before {
   content: '';
   position: absolute;
