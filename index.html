@@ -4,47 +4,48 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Iane 💌</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
   <link rel="stylesheet" href="iane.css" />
 </head>
 <body>
-  <div class="container" id="carta">
-    <div class="envelope"></div>
 
-    <div class="card">
-      <h1 class="message">Bom dia Iane, tu é linda!💖</h1>
-      <div class="pikachu">
-        <div class="limbs"></div>
-        <div class="heart"></div>
-        <div class="arms"></div>
-        <div class="smile"></div>
-      </div>
+<div class="bgoverlay">
+  <div class="container">
+    <span class="ico">
+      <span class="ico2"></span>
+      <span class="title">Clique aqui 💖</span>
+    </span>
+    <div class="endtext">
+      <span class="close" title="Recomeçar"><i class="fa fa-times"></i></span>  
+      <h1>Bom dia, Iane 💖</h1>
+      <h2>Você é incrível e muito linda</h2>
+      <h3>— Com carinho, Rhaiky seu amor</h3>
     </div>
-
-    <div class="cover"></div>
-    <div class="lid"></div>
-    <div class="shadow"></div>
   </div>
+</div>
 
-  <!-- Música funcionando com link confiável -->
-  <audio id="musica" src="https://cdn.glitch.global/9e9705db-9e12-4563-8700-7e08ff3d18e0/thousand-years.mp3?v=1711327321384" preload="auto"></audio>
+<audio id="musica" src="https://cdn.glitch.global/9e9705db-9e12-4563-8700-7e08ff3d18e0/thousand-years.mp3?v=1711327321384" preload="auto"></audio>
 
-  <script>
-    const carta = document.getElementById('carta');
-    const lid = carta.querySelector('.lid');
-    const card = carta.querySelector('.card');
-    const audio = document.getElementById('musica');
-
-    carta.addEventListener('click', () => {
-      lid.classList.toggle('open');
-      card.classList.toggle('show');
-
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+  $(document).ready(function(){
+    $('.title').click(function(){
+      $('.container').addClass('open');
+      const audio = document.getElementById('musica');
       if (audio.paused) {
-        audio.volume = 0.7;
-        audio.play().catch(() => {
-          console.log("Autoplay bloqueado até interação.");
-        });
+        audio.volume = 0.6;
+        audio.play();
       }
     });
-  </script>
+
+    $('.close').click(function(){
+      $('.container').removeClass('open');
+      const audio = document.getElementById('musica');
+      audio.pause();
+      audio.currentTime = 0;
+    });
+  });
+</script>
+
 </body>
 </html>
