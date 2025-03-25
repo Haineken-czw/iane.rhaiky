@@ -50,19 +50,23 @@ body {
 }
 
 .message {
-  position: absolute;
-  top: 5vmin;
-  text-align: center;
+    position: relative;
+    top: 2vmin;
+    font-size: 3.5vmin;
+    text-align: center;
+    padding: 0 2vmin;
+    z-index: 2;
 }
 
 .pikachu {
-  position: absolute;
+    position: relative;
   background: #f9ebaa;
   height: 8vmin;
   width: 10vmin;
   border-radius: 40%;
-  top: 15vmin;
+  top: 4vmin;
   display: flex;
+  z-index: 1;
 }
 .pikachu::before {
   content: '';
