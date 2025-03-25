@@ -3,15 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Iane é linda ❤️</title>
+  <title>Iane 💌</title>
   <link rel="stylesheet" href="iane.css">
 </head>
 <body>
-  <div class="container">
+  <div class="container" id="carta">
     <div class="envelope"></div>
-
     <div class="card">
-      <h1 class="message">Bom dia Iane, você é muito linda!💖</h1>
+      <h1 class="message">Bom dia Iane, você é bastante linda!💖</h1>
       <div class="pikachu">
         <div class="limbs"></div>
         <div class="heart"></div>
@@ -19,10 +18,20 @@
         <div class="smile"></div>
       </div>
     </div>
-
     <div class="cover"></div>
     <div class="lid"></div>
     <div class="shadow"></div>
   </div>
+
+  <script>
+    const carta = document.getElementById('carta');
+    const lid = carta.querySelector('.lid');
+    const card = carta.querySelector('.card');
+
+    carta.addEventListener('click', () => {
+      lid.classList.toggle('open');
+      card.classList.toggle('show');
+    });
+  </script>
 </body>
 </html>
