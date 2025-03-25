@@ -51,14 +51,14 @@ body {
 
 .message {
     position: absolute;
-    top: 2vmin;
+    top: 1vmin;
     left: 0;
     right: 0;
-    font-size: 3.5vmin;
+    font-size: 3.2vmin;
     text-align: center;
     padding: 0 2vmin;
-    z-index: 3;
-  }  
+    z-index: 5;
+  }
 
   .pikachu {
     position: absolute;
@@ -66,10 +66,11 @@ body {
     height: 8vmin;
     width: 10vmin;
     border-radius: 40%;
-    top: 10vmin;
+    top: 18vmin;
     display: flex;
     z-index: 2;
   }
+  
 .pikachu::before {
   content: '';
   position: absolute;
