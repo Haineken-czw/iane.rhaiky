@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Iane 💌</title>
-  <link rel="stylesheet" href="iane.css">
+  <link rel="stylesheet" href="iane.css" />
 </head>
 <body>
   <div class="container" id="carta">
     <div class="envelope"></div>
+
     <div class="card">
-      <h1 class="message">Bom dia Iane, você é bastante linda!💖</h1>
+      <h1 class="message">Bom dia Iane, você é linda! 💖</h1>
       <div class="pikachu">
         <div class="limbs"></div>
         <div class="heart"></div>
@@ -18,19 +19,31 @@
         <div class="smile"></div>
       </div>
     </div>
+
     <div class="cover"></div>
     <div class="lid"></div>
     <div class="shadow"></div>
   </div>
 
+  <!-- Música funcionando com link confiável -->
+  <audio id="musica" src="https://cdn.glitch.global/9e9705db-9e12-4563-8700-7e08ff3d18e0/thousand-years.mp3?v=1711327321384" preload="auto"></audio>
+
   <script>
     const carta = document.getElementById('carta');
     const lid = carta.querySelector('.lid');
     const card = carta.querySelector('.card');
+    const audio = document.getElementById('musica');
 
     carta.addEventListener('click', () => {
       lid.classList.toggle('open');
       card.classList.toggle('show');
+
+      if (audio.paused) {
+        audio.volume = 0.7;
+        audio.play().catch(() => {
+          console.log("Autoplay bloqueado até interação.");
+        });
+      }
     });
   </script>
 </body>
